@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "user1",
+            "username": "user1@app.com",
+            "password": "$2b$12$R8b3eCnpiKuPSoRuOGKMPetk8qyGhC/zD6EZPMJynVLkys5JLvR9u"
+        },
+        {
+            "id": 2,
+            "name": "user2",
+            "username": "user2@app.com",
+            "password": "$2b$12$R8b3eCnpiKuPSoRuOGKMPetk8qyGhC/zD6EZPMJynVLkys5JLvR9u"
+        }
+    ]
+}

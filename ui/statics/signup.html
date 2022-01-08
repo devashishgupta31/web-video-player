@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Signup Template · Bootstrap v5.1</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <meta name="theme-color" content="#7952b3">
+    <link href="/ui/css/login.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+    <main class="form-signin">
+        <form action="/auth/signup" method="post">
+            <img class="mb-4" src="../images/bootstrap-logo.svg" alt="" width="72" height="57">
+            <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" placeholder="name" name="name">
+                <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="mobile" placeholder="mobile" name="mobile">
+                <label for="floatingInput">Mobile</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="alert alert-danger" role="alert" style="display: none;" id="failed">
+                Signup failed!
+            </div>
+            <div class="alert alert-danger" role="alert" style="display: none;" id="failed1">
+                Fill details
+            </div>
+            <div class="alert alert-success" role="alert" style="display: none;" id="success">
+                Signup successful!
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="button" onclick="submitForm()">Sign up</button>
+            <button class="w-100 btn btn-lg btn-primary" style="margin-top: 5px;" type="button" onclick="signin()">Sign
+                in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        </form>
+    </main>
+</body>
+
+<script>
+    function signin() {
+        var options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow'
+        }
+        fetch(window.location.origin + "/app/login", options).then(resp => {
+            if (resp.redirected) {
+                window.location.href = resp.url
+            }
+        })
+    }
+</script>
+
+</html>

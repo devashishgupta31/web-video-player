@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Welcome</title>
+
+    <link href="/ui/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/ui/css/welcome.css" rel="stylesheet">
+    <link href="/ui/css/cover.css" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">Cover</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link active" aria-current="page" onclick="redirect('login')">Login</a>
+                    <a class="nav-link" onclick="redirect('signup')">Sign-Up</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="px-3">
+            <h1>Welcome to web video player.</h1>
+            <p class="lead">
+            </p>
+        </main>
+
+        <footer class="mt-auto text-white-50">
+        </footer>
+    </div>
+</body>
+
+<script>
+    function redirect(page) {
+        var options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow'
+        }
+        fetch(window.location.origin + "/app/" + page, options).then((resp) => {
+            if (resp.redirected) {
+                window.location.href = resp.url
+            }
+        })
+    }
+</script>
+
+</html>
